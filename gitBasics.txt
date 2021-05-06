@@ -65,6 +65,11 @@
 	
 	nota: importa la repository nella directory nella quale ci si trova. Se, per esempio, ci troviamo in C:\Users\{user-corrente}\Desktop\{cartella} ed eseguiamo il comando, viene clonata qui
 	
+## merge di un branch
+	
+	git checkout {branch-da-aggiornare}
+	git merge {nome-branch-con-modifiche-da-portare}
+	
 
 	
 
