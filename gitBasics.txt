@@ -70,7 +70,9 @@
 	git checkout {branch-da-aggiornare}
 	git merge {nome-branch-con-modifiche-da-portare}
 	
-
+## aggiungere directory vuota alla repository
+	
+	creare un file .gitkeep oppure un file README.md (che contiene una descrizione della cartella) in tutte le cartelle interessate
 	
 
 
