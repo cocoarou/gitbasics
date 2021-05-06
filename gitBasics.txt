@@ -41,6 +41,32 @@
 	nota: se si pusha un branch nuovo, potrebbe non pushare e chiedere di settare l'upstream. Basta semplicemente fare copia ed incolla di quello che viene proposto dalla console 
 	(dovrebbe essere una cosa tipo: git push --set-upstream origin {nome-branch}
 	
+## vedere lo stato dei file nella repository locale
+
+	git status
+	
+	nota: mostra in rosso i file che non sono nell'area di staging ed in verde quelli che ci sono
+	
+## aggiungere file all'area di staging
+
+	git add {nome-file-da-aggiungere} ## un file alla volta
+	git add .						  ## tutti i file
+	
+## commit dei file in staging
+
+	git commit -m "messaggio del commit"
+	
+	nota: con l'opzione -m si puo' scrivere il messaggio del commit direttamente da console, se si omette viene aperto l'editor di default e lo fa inserire.
+	questo comando esegue il commit solo dei file nell'area di staging
+	
+## clonare una repository
+
+	git clone {indirizzo-repository} ## esempio: git clone https://github.com/cocoarou/gitBasics
+	
+	nota: importa la repository nella directory nella quale ci si trova. Se, per esempio, ci troviamo in C:\Users\{user-corrente}\Desktop\{cartella} ed eseguiamo il comando, viene clonata qui
+	
+
+	
 
 
 
