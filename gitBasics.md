@@ -77,7 +77,9 @@
 
 ## inizializzare una cartella in repository locale git
 
-	navigare nella cartella desiderata ed eseguire il comando _git init_
+	navigare nella cartella desiderata ed eseguire il comando: git init
+	
+	nota: ora nella cartella dovrebbe essere presente una directory nascosta .git
 
 
 	
