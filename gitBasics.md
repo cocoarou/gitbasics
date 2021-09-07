@@ -49,8 +49,8 @@
 	
 ## aggiungere file all'area di staging
 
-	git add {nome-file-da-aggiungere} ## un file alla volta
-	git add .						  ## tutti i file
+	git add {nome-file-da-aggiungere} 		## un file alla volta
+	git add .					## tutti i file
 	
 ## commit dei file in staging
 
