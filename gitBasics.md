@@ -75,7 +75,9 @@
 	creare un file .gitkeep oppure un file README.md (che contiene una descrizione della cartella) in tutte le cartelle interessate
 	
 
+## inizializzare una cartella in repository locale git
 
+	navigare nella cartella desiderata ed eseguire il comando _git init_
 
 
 	
