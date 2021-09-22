@@ -1,85 +1,129 @@
-## mostra i branch che ho in locale per la repository corrente ##
-	
-	git branch
+# 													**GIT**
 
-## mostra i branch remoti della repository corrente ##
-	
-	git branch -r
+------
 
-## mostra tutti i branch della repository ##
-	
-	git branch -a
+## **Git started** 
 
-## crea branch
+### Inizializzare una cartella in repository locale git
 
-	git branch {nome-branch}
+Navigare nella cartella desiderata ed eseguire il comando: 
 
-	nota: il branch viene creato dal branch nel quale ti trovi (per capire il branch nel quale ti trovi e' semplice: quando usi il comando 'git branch' la console, di solito, ti evidenzia sia con colore diverso che con un asterisco all'inizio il branch nel quale sei)
+```bash
+git init
+```
 
-## crea branch e rendilo il branch corrente
+nota: ora nella cartella dovrebbe essere presente una directory nascosta .git
 
-	git checkout -b {nome-branch}
-	
-## cambiare branch
+### Crea branch
 
-	git checkout {nome-branch}
-	
-## aggiornare la repository
-	
-	git fetch
-	
-	nota: questa funzione viene fatta in automatico quando fai 'git pull', pero' puo' capitare che non ti serva di aggiornare il branch, ma di vedere se qualcuno ha aggiunto o rimosso dei branch sulla repository remota
-	
-## aggiornare il branch
+```bash
+git branch {nome-branch}
+git checkout -b {nome-branch} ##CREA e rendi il branch corrente
+```
 
-	git pull origin {nome-branch}
-	
-## aggiornare la repository remota
+Nota: il branch viene creato dal branch nel quale ti trovi (per capire il branch nel quale ti trovi è semplice: quando usi il comando 'git branch' la console, di solito, ti evidenzia sia con colore diverso che con un asterisco all inizio il branch nel quale sei)
 
-	git push origin (nome-branch}
-	
-	nota: se si pusha un branch nuovo, potrebbe non pushare e chiedere di settare l'upstream. Basta semplicemente fare copia ed incolla di quello che viene proposto dalla console 
-	(dovrebbe essere una cosa tipo: git push --set-upstream origin {nome-branch}
-	
-## vedere lo stato dei file nella repository locale
+### Mostra i branch che ho in locale per la repository corrente ###
 
-	git status
-	
-	nota: mostra in rosso i file che non sono nell'area di staging ed in verde quelli che ci sono
-	
-## aggiungere file all'area di staging
+```bash
+git branch
+git branch -r	#branch remoti repository corrente
+git branch -a	#TUTTI i branch
+```
 
-	git add {nome-file-da-aggiungere} 		## un file alla volta
-	git add .					## tutti i file
-	
-## commit dei file in staging
+### Cambiare branch
 
-	git commit -m "messaggio del commit"
-	
-	nota: con l'opzione -m si puo' scrivere il messaggio del commit direttamente da console, se si omette viene aperto l'editor di default e lo fa inserire.
-	questo comando esegue il commit solo dei file nell'area di staging
-	
-## clonare una repository
+```bash
+git checkout {nome-branch}
+```
 
-	git clone {indirizzo-repository} ## esempio: git clone https://github.com/cocoarou/gitBasics
-	
-	nota: importa la repository nella directory nella quale ci si trova. Se, per esempio, ci troviamo in C:\Users\{user-corrente}\Desktop\{cartella} ed eseguiamo il comando, viene clonata qui
-	
-## merge di un branch
-	
-	git checkout {branch-da-aggiornare}
-	git merge {nome-branch-con-modifiche-da-portare}
-	
-## aggiungere directory vuota alla repository
-	
-	creare un file .gitkeep oppure un file README.md (che contiene una descrizione della cartella) in tutte le cartelle interessate
-	
+### Aggiornare la repository
 
-## inizializzare una cartella in repository locale git
+```bash
+git fetch
+```
 
-	navigare nella cartella desiderata ed eseguire il comando: git init
-	
-	nota: ora nella cartella dovrebbe essere presente una directory nascosta .git
+nota: questa funzione viene fatta in automatico quando fai 'git pull', pero puo capitare che non ti serva di aggiornare il branch, ma di vedere se qualcuno ha aggiunto o rimosso dei branch sulla repository remota
 
+### Aggiornare il branch
 
-	
+```bash
+git pull origin {nome-branch}
+```
+
+### Aggiornare la repository remota
+
+```bash
+git push origin (nome-branch}
+(dovrebbe essere una cosa  
+```
+
+nota: se si pusha  branch nuovo, potrebbe non pushare e chiedere di settare l upstream. 
+Basta semplicemente fare copia ed incolla di quello che viene proposto dalla console, tipo:
+
+```bash
+git push --set-upstream origin {nome-branch}
+```
+
+### Aggiungere file all'area di staging
+
+```bash
+git add {nome-file-da-aggiungere} 		##un file alla voltagit add .					##tutti i file
+```
+
+### Commit dei file in staging
+
+```bash
+git commit -m "messaggio del commit"
+```
+
+nota: con l'opzione -m si puo' scrivere il messaggio del commit direttamente da console, se si omette viene aperto l'editor di default e lo fa inserire.
+questo comando esegue il commit solo dei file nell'area di staging
+
+### Clonare una repository
+
+```bash
+git clone {indirizzo-repository} ## esempio: git clone https://github.com/cocoarou/gitBasics
+```
+
+nota: importa la repository nella directory nella quale ci si trova. Se, per esempio, ci troviamo in 
+*C:\Users\{user-corrente}\Desktop\{cartella}* ed eseguiamo il comando, viene clonata qui
+
+### Merge di un branch
+
+```bash
+git checkout {branch-da-aggiornare}git merge {nome-branch-con-modifiche-da-portare}
+```
+
+### Aggiungere directory vuota alla repository
+
+```bash
+creare un file .gitkeep oppure un file README.md (che contiene una descrizione della cartella) in tutte le cartelle interessate
+```
+
+## Git LOG
+
+### Loggare i commit della repository attuale
+
+```bash
+git log 																		# -p: PER LOGGARE ANCHE I CAMBIAMENTI DELLE VARIE VERSIONI
+git log -p (or --patch) -2 										# -2: per loggare gli ultimi 2 cambiamenti 
+
+git log --stat 															#LOG in forma abbreviata
+git log --pretty=format:"%h - %an, %ar : %s" --graph
+#Posso con --pretty scegliere anche il tipo di formato tra oneline, short, full, fuller oppure format specificando tra apici quali dati visualizzare ed i separatori; 
+# --graph mi formatta un grafico in ASCII dei vari commit/branch
+```
+
+Lista completa dei comandi:
+https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History
+
+### Loggare i commit della repository attuale
+
+```bash
+git log 
+git log -p (or --patch) -2 # -p: PER LOGGARE ANCHE I CAMBIAMENTI DELLE VARIE VERSIONI
+												 # -2: per loggare gli ultimi 2 cambiamenti
+```
+
+## 
