@@ -8,7 +8,7 @@
 
 ## **Git started** 
 
-### Inizializzare una cartella in repository locale git
+#### **Inizializzare una cartella in repository locale git**
 
 Navigare nella cartella desiderata ed eseguire il comando: 
 
@@ -18,7 +18,7 @@ git init
 
 nota: ora nella cartella dovrebbe essere presente una directory nascosta .git
 
-### Crea branch
+#### **Crea branch**
 
 ```bash
 git branch {nome-branch}
@@ -27,7 +27,7 @@ git checkout -b {nome-branch} ##CREA e rendi il branch corrente
 
 Nota: il branch viene creato dal branch nel quale ti trovi (per capire il branch nel quale ti trovi è semplice: quando usi il comando 'git branch' la console, di solito, ti evidenzia sia con colore diverso che con un asterisco all inizio il branch nel quale sei)
 
-### Mostra i branch che ho in locale per la repository corrente ###
+#### **Mostra i branch che ho in locale per la repository corrente** ####
 
 ```bash
 git branch
@@ -35,13 +35,13 @@ git branch -r	#branch remoti repository corrente
 git branch -a	#TUTTI i branch
 ```
 
-### Cambiare branch
+#### **Cambiare branch**
 
 ```bash
 git checkout {nome-branch}
 ```
 
-### Clonare una repository
+#### **Clonare una repository**
 
 ```bash
 git clone {indirizzo-repository} 
@@ -55,7 +55,7 @@ nota: importa la repository nella directory nella quale ci si trova. Se, per ese
 
 ## Git LOG
 
-### Loggare i commit della repository 
+#### **Loggare i commit della repository** 
 
 ```bash
 git log
@@ -85,13 +85,25 @@ https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History
 
 ## **Git Gud - Azioni su repository**
 
-### Visualizzare stato file
+### **DO  THINGS**
+
+#### **Aggiungere file all'area di staging**
+
+```bash
+git add {nome-file-da-aggiungere}
+#un file alla volta
+
+git add .
+#tutti i file
+```
+
+#### **Visualizzare stato file**
 
 ```bash
 git status
 ```
 
-### Aggiornare la repository
+#### **Aggiornare la repository**
 
 ```bash
 git fetch
@@ -99,13 +111,13 @@ git fetch
 
 Questa funzione viene fatta in automatico quando fai 'git pull', pero puo capitare che non ti serva di aggiornare il branch, ma di vedere se qualcuno ha aggiunto o rimosso dei branch sulla repository remota
 
-### Aggiornare il branch
+#### Aggiornare il branch
 
 ```bash
 git pull origin {nome-branch}
 ```
 
-### Aggiornare la repository remota
+#### **Aggiornare la repository remota**
 
 ```bash
 git push origin (nome-branch}
@@ -118,17 +130,7 @@ Basta semplicemente fare copia ed incolla di quello che viene proposto dalla con
 git push --set-upstream origin {nome-branch}
 ```
 
-### Aggiungere file all'area di staging
-
-```bash
-git add {nome-file-da-aggiungere}
-#un file alla volta
-
-git add .
-#tutti i file
-```
-
-### Commit dei file in staging
+#### **Commit dei file in staging**
 
 ```bash
 git commit -m "messaggio del commit"
@@ -137,13 +139,29 @@ git commit -m "messaggio del commit"
 nota: con l'opzione -m si puo' scrivere il messaggio del commit direttamente da console, se si omette viene aperto l'editor di default e lo fa inserire.
 questo comando esegue il commit solo dei file nell'area di staging
 
-### Merge di un branch
+#### **Merge di un branch**
 
 ```bash
 git checkout {branch-da-aggiornare}git merge {nome-branch-con-modifiche-da-portare}
 ```
 
-### Aggiungere directory vuota alla repository
+#### **Aggiungere directory vuota alla repository**
 
 creare un file .gitkeep oppure un file README.md (che contiene una descrizione della cartella) in tutte le cartelle interessate
+
+### **UNDO  THINGS**
+
+#### **Correggere commit **
+
+```bash
+git commit --amend
+```
+
+Utile per aggiungere file dimencati in un commit precedente, e sovrascriverlo.
+
+```bash
+git commit -m 'commit iniziale'
+git add file_dimenticato
+git commit --amend
+```
 
