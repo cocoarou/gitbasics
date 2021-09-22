@@ -30,9 +30,9 @@ Nota: il branch viene creato dal branch nel quale ti trovi (per capire il branch
 #### **Mostra i branch che ho in locale per la repository corrente** ####
 
 ```bash
-git branch
-git branch -r	#branch remoti repository corrente
-git branch -a	#TUTTI i branch
+git branch		#branch locali
+git branch -r	#branch remoti 
+git branch -a	#TUTTI i branch (sia locali che remoti)
 ```
 
 #### **Cambiare branch**
@@ -123,7 +123,7 @@ git pull origin {nome-branch}
 git push origin (nome-branch}
 ```
 
-Se si pusha  branch nuovo, potrebbe non pushare e chiedere di settare l upstream. 
+nota: se si pusha un branch nuovo, potrebbe non pushare e chiedere di settare l upstream. 
 Basta semplicemente fare copia ed incolla di quello che viene proposto dalla console, tipo:
 
 ```bash
@@ -142,10 +142,14 @@ questo comando esegue il commit solo dei file nell'area di staging
 #### **Merge di un branch**
 
 ```bash
-git checkout {branch-da-aggiornare}git merge {nome-branch-con-modifiche-da-portare}
+git checkout {branch-da-aggiornare}
+git merge {nome-branch-con-modifiche-da-portare}
 ```
 
-#### **Aggiungere directory vuota alla repository**
+nota: per apportare le modifiche effettuate da un branch ad un altro, bisogna posizionarsi nel branch nel quale vogliamo far convergere le modifiche (con git checkout {branch-da-aggiornare})
+e richiamare il branch con le modifiche (git merge {nome-branch-con-modifiche-da-portare})
+
+### Aggiungere directory vuota alla repository
 
 creare un file .gitkeep oppure un file README.md (che contiene una descrizione della cartella) in tutte le cartelle interessate
 
