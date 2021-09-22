@@ -111,11 +111,7 @@ git pull origin {nome-branch}
 git push origin (nome-branch}
 ```
 
-<<<<<<< HEAD
 nota: se si pusha un branch nuovo, potrebbe non pushare e chiedere di settare l upstream. 
-=======
-Se si pusha  branch nuovo, potrebbe non pushare e chiedere di settare l upstream. 
->>>>>>> 52001561a80fe763ed8fb1178201f1ede89b155d
 Basta semplicemente fare copia ed incolla di quello che viene proposto dalla console, tipo:
 
 ```bash
@@ -125,16 +121,11 @@ git push --set-upstream origin {nome-branch}
 ### Aggiungere file all'area di staging
 
 ```bash
-<<<<<<< HEAD
-git add {nome-file-da-aggiungere} 		##un file alla volta
-git add .								##tutti i file
-=======
 git add {nome-file-da-aggiungere}
 #un file alla volta
 
 git add .
 #tutti i file
->>>>>>> 52001561a80fe763ed8fb1178201f1ede89b155d
 ```
 
 ### Commit dei file in staging
