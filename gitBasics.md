@@ -1,4 +1,8 @@
-# 													**GIT**
+# 												**GIT**
+
+[TOC]
+
+
 
 ------
 
@@ -37,13 +41,63 @@ git branch -a	#TUTTI i branch
 git checkout {nome-branch}
 ```
 
+### Clonare una repository
+
+```bash
+git clone {indirizzo-repository} 
+#esempio: git clone https://github.com/cocoarou/gitBasics
+```
+
+nota: importa la repository nella directory nella quale ci si trova. Se, per esempio, ci troviamo in 
+*C:\Users\{user-corrente}\Desktop\{cartella}* ed eseguiamo il comando, viene clonata qui
+
+------
+
+## Git LOG
+
+### Loggare i commit della repository 
+
+```bash
+git log
+git log -p (or --patch) -2
+# -p: PER LOGGARE ANCHE I CAMBIAMENTI DELLE VARIE VERSIONI
+# -<n>: con n=2 per loggare gli ultimi 2 cambiamenti 
+
+git log --stat
+#LOG in forma abbreviata
+
+git log --pretty=format:"%h - %an, %ar : %s"
+# --pretty peremette di rappresentare il log con dati CUSTOM
+
+git log --since=2.weeks
+git log --before="2008-11-01" 
+#Si possono usare anche operatori come  --since --after --until --before ed accettano diversi formati di data					
+```
+
+Lista completa dei comandi per dati custom:
+https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History
+
+> Sarebbe buono aggiungere qualche configurazione custom per la rappresentazione dei log
+>
+> - Capored
+
+------
+
+## **Git Gud - Azioni su repository**
+
+### Visualizzare stato file
+
+```bash
+git status
+```
+
 ### Aggiornare la repository
 
 ```bash
 git fetch
 ```
 
-nota: questa funzione viene fatta in automatico quando fai 'git pull', pero puo capitare che non ti serva di aggiornare il branch, ma di vedere se qualcuno ha aggiunto o rimosso dei branch sulla repository remota
+Questa funzione viene fatta in automatico quando fai 'git pull', pero puo capitare che non ti serva di aggiornare il branch, ma di vedere se qualcuno ha aggiunto o rimosso dei branch sulla repository remota
 
 ### Aggiornare il branch
 
@@ -55,10 +109,9 @@ git pull origin {nome-branch}
 
 ```bash
 git push origin (nome-branch}
-(dovrebbe essere una cosa  
 ```
 
-nota: se si pusha  branch nuovo, potrebbe non pushare e chiedere di settare l upstream. 
+Se si pusha  branch nuovo, potrebbe non pushare e chiedere di settare l upstream. 
 Basta semplicemente fare copia ed incolla di quello che viene proposto dalla console, tipo:
 
 ```bash
@@ -68,7 +121,11 @@ git push --set-upstream origin {nome-branch}
 ### Aggiungere file all'area di staging
 
 ```bash
-git add {nome-file-da-aggiungere} 		##un file alla voltagit add .					##tutti i file
+git add {nome-file-da-aggiungere}
+#un file alla volta
+
+git add .
+#tutti i file
 ```
 
 ### Commit dei file in staging
@@ -80,15 +137,6 @@ git commit -m "messaggio del commit"
 nota: con l'opzione -m si puo' scrivere il messaggio del commit direttamente da console, se si omette viene aperto l'editor di default e lo fa inserire.
 questo comando esegue il commit solo dei file nell'area di staging
 
-### Clonare una repository
-
-```bash
-git clone {indirizzo-repository} ## esempio: git clone https://github.com/cocoarou/gitBasics
-```
-
-nota: importa la repository nella directory nella quale ci si trova. Se, per esempio, ci troviamo in 
-*C:\Users\{user-corrente}\Desktop\{cartella}* ed eseguiamo il comando, viene clonata qui
-
 ### Merge di un branch
 
 ```bash
@@ -97,33 +145,5 @@ git checkout {branch-da-aggiornare}git merge {nome-branch-con-modifiche-da-porta
 
 ### Aggiungere directory vuota alla repository
 
-```bash
 creare un file .gitkeep oppure un file README.md (che contiene una descrizione della cartella) in tutte le cartelle interessate
-```
 
-## Git LOG
-
-### Loggare i commit della repository attuale
-
-```bash
-git log 																		# -p: PER LOGGARE ANCHE I CAMBIAMENTI DELLE VARIE VERSIONI
-git log -p (or --patch) -2 										# -2: per loggare gli ultimi 2 cambiamenti 
-
-git log --stat 															#LOG in forma abbreviata
-git log --pretty=format:"%h - %an, %ar : %s" --graph
-#Posso con --pretty scegliere anche il tipo di formato tra oneline, short, full, fuller oppure format specificando tra apici quali dati visualizzare ed i separatori; 
-# --graph mi formatta un grafico in ASCII dei vari commit/branch
-```
-
-Lista completa dei comandi:
-https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History
-
-### Loggare i commit della repository attuale
-
-```bash
-git log 
-git log -p (or --patch) -2 # -p: PER LOGGARE ANCHE I CAMBIAMENTI DELLE VARIE VERSIONI
-												 # -2: per loggare gli ultimi 2 cambiamenti
-```
-
-## 
