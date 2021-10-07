@@ -120,7 +120,7 @@ git pull origin {nome-branch}
 #### **Aggiornare la repository remota**
 
 ```bash
-git push origin (nome-branch}
+git push origin {nome-branch}
 ```
 
 nota: se si pusha un branch nuovo, potrebbe non pushare e chiedere di settare l upstream. 
