@@ -53,7 +53,7 @@ nota: importa la repository nella directory nella quale ci si trova. Se, per ese
 
 ------
 
-## Git LOG
+## **Git LOG**
 
 #### **Loggare i commit della repository** 
 
